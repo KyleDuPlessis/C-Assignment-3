@@ -1,0 +1,46 @@
+Makefile rules:
+
+Makefile in project folder (Assignment3_DPLKYL002):
+
+[* - use these rules here]
+
+make - compile this project folder only
+*make all - compile the entire project
+*make run args="***" - run the program
+*make clean - clean the entire project
+*make run_unit_tests
+
+***huffencode <inputFileName> <outputFileName>
+
+Note: 
+- Don't include the angle brackets.
+
+Run example:
+make run args="huffencode test1.txt output/output"
+
+Makefiles in /libs/huffmantreelib folders:
+make - compile this folder only
+make clean - clean this folder only
+
+Explanation of what each file does and how it fits into the program as a whole:
+
+HuffmanTree.cpp & HuffmanTree.h - These source and header files manages the Huffman tree and has methods to compress data, 
+				build a Huffman tree etc - implements the compression and decompression functionality.
+			
+Huffencode.cpp - This driver source file contains the main function (entry point to the program). It parses the command line 
+	 using the argc and argv values passed into main() and uses these arguments to invoke the correct operation function.
+	 
+Test.cpp - This source file provides unit tests for each of the sections of the code: frequency counting, tree construction, 
+	code table construction (tree traversal), encoding, etc.
+
+Explanation of (1) input file required by program:
+***test1.txt - an input English (ASCII) text file
+
+Explanation of (4) output files produced by program:
+output1 - an output compressed "bitstream" file
+***decompressed_test1.txt - decompressed file
+**output1.hdr - code table file
+**output1.bin - binary file
+
+*** should be identical - shows that decompression works
+** files required for decompression
